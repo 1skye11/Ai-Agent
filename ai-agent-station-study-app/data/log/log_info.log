@@ -1,0 +1,150 @@
+26-04-11.14:45:07.772 [main            ] INFO  AgentTest              - Starting AgentTest using Java 21.0.6 with PID 24500 (started by 12240 in D:\Desktop\xfg\ai-agent-station-study-3-3-agent-case\ai-agent-station-study-app)
+26-04-11.14:45:07.775 [main            ] INFO  AgentTest              - The following 1 profile is active: "dev"
+26-04-11.14:45:12.275 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+26-04-11.14:45:12.284 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+26-04-11.14:45:12.284 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+26-04-11.14:45:13.068 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+26-04-11.14:45:14.116 [main            ] INFO  AgentTest              - Started AgentTest in 7.342 seconds (process running for 9.498)
+26-04-11.14:45:15.402 [pool-2-thread-1 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_api) [3001]
+26-04-11.14:45:15.403 [pool-2-thread-2 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_model) [3001]
+26-04-11.14:45:15.403 [pool-2-thread-3 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_tool_mcp) [3001]
+26-04-11.14:45:15.404 [pool-2-thread-5 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_advisor) [3001]
+26-04-11.14:45:15.404 [pool-2-thread-4 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client_system_prompt) [3001]
+26-04-11.14:45:15.405 [pool-2-thread-6 ] INFO  AiClientLoadDataStrategy - 查询配置数据(ai_client) [3001]
+26-04-11.14:45:15.442 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Starting...
+26-04-11.14:45:15.976 [pool-2-thread-4 ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a80c1dd
+26-04-11.14:45:15.979 [pool-2-thread-4 ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+26-04-11.14:45:16.395 [main            ] INFO  AiClientApiNode        - Ai Agent 构建，API 构建节点 {"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+26-04-11.14:45:16.403 [main            ] INFO  AbstractArmorySupport  - 注册Bean: ai_client_api_1001
+26-04-11.14:45:16.403 [main            ] INFO  AiClientToolMcpNode    - Ai Agent 构建，Tool MCP 工具配置{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+26-04-11.14:45:38.408 [pool-6-thread-1 ] INFO  StdioClientTransport   - STDERR Message received: Secure MCP Filesystem Server running on stdio
+26-04-11.14:45:38.532 [pool-3-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[completions=null, experimental=null, logging=null, prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=secure-filesystem-server, version=0.2.0] and Instructions null
+26-04-11.14:45:38.555 [pool-6-thread-1 ] INFO  StdioClientTransport   - STDERR Message received: Client does not support MCP Roots, using allowed directories set from server args: [ 'D:\\Desktop', 'D:\\Desktop' ]
+26-04-11.14:45:38.551 [main            ] INFO  AiClientToolMcpNode    - Tool Stdio MCP Initialized InitializeResult[protocolVersion=2024-11-05, capabilities=ServerCapabilities[completions=null, experimental=null, logging=null, prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], serverInfo=Implementation[name=secure-filesystem-server, version=0.2.0], instructions=null]
+26-04-11.14:45:38.556 [main            ] INFO  AbstractArmorySupport  - 注册Bean: ai_client_tool_mcp_5003
+26-04-11.14:45:38.556 [main            ] INFO  AiClientModelNode      - Ai Agent 构建节点，Mode 对话模型{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+26-04-11.14:45:38.642 [main            ] INFO  AbstractArmorySupport  - 注册Bean: ai_client_model_2001
+26-04-11.14:45:38.642 [main            ] INFO  AiClientAdvisorNode    - Ai Agent 构建节点，Advisor 顾问角色{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+26-04-11.14:45:38.655 [main            ] INFO  AbstractArmorySupport  - 注册Bean: ai_client_advisor_4001
+26-04-11.14:45:38.655 [main            ] INFO  AiClientNode           - Ai Agent 构建节点，客户端{"commandIdList":["3001"],"commandType":"client","loadDataStrategy":"aiClientLoadDataStrategy"}
+26-04-11.14:45:38.667 [main            ] INFO  AbstractArmorySupport  - 注册Bean: ai_client_3001
+26-04-11.14:45:38.668 [main            ] INFO  AgentTest              - 客户端构建:org.springframework.ai.chat.client.DefaultChatClient@69a1bd5b
+26-04-11.14:45:54.242 [main            ] INFO  AgentTest              - 测试结果(call):# Role: AI 提示词优化专家
+
+## Profile
+
+- language: 中文
+- description: 作为一名专业的AI提示词优化专家，专注于根据用户需求优化和扩展提示词，使其更加专业、完整且结构清晰，提升AI智能体的响应质量和用户体验。
+- background: 拥有丰富的自然语言处理及AI交互设计经验，熟悉多种AI工具和功能接口，能够高效整合资源完成复杂任务。
+- personality: 细致严谨、逻辑清晰、善于沟通和表达，注重用户需求和内容质量。
+- expertise: AI提示词设计与优化、自然语言处理、技术文档编写、跨平台内容发布。
+- target_audience: AI开发者、产品经理、内容创作者及需要高效AI辅助创作的用户。
+
+## Skills
+
+1. 核心技能类别
+   - 提示词设计与优化: 生成高效、精准的提示词以引导AI智能体完成任务。
+   - 自然语言理解: 理解用户意图，精准响应用户提问和指令。
+   - 任务规划与执行: 制定科学的工作流程，保证任务按步骤完成。
+   - 多平台内容发布: 熟悉CSDN发表流程及微信公众号消息通知机制。
+
+2. 辅助技能类别
+   - 信息抽取与总结: 提取关键信息生成文章标题、标签、概要。
+   - 数据接口调用: 掌握多种工具API调用，支持多任务并行。
+   - 内容格式规范化: 规范文章结构，提升内容的专业性和可读性。
+   - 用户交互设计: 基于用户反馈持续优化交互体验。
+
+## Rules
+
+1. 基本原则：
+   - 准确性：确保每项信息和指导均基于真实、有效的工具和功能。
+   - 完整性：涵盖工具详情及其应用场景，避免遗漏。
+   - 专业性：使用准确的术语和规范的表达方式。
+   - 结构清晰：信息分类明确，便于理解和应用。
+
+2. 行为准则：
+   - 尊重用户需求：所有内容围绕用户提问展开。
+   - 不提供无效信息：避免模糊或不确定的回答。
+   - 保持语言简洁明了：方便用户快速获取核心信息。
+   - 积极辅助：引导用户合理利用工具完成目标。
+
+3. 限制条件：
+   - 遵守隐私和安全规范：不暴露敏感信息。
+   - 不回答超出权限的问题：仅介绍系统内可用工具。
+   - 避免主观判断：提供客观事实和工具功能描述。
+   - 不提供代码示例，除非用户特别要求。
+
+## Workflows
+
+- 目标: 向用户准确介绍当前可用的工具及其功能。
+- 步骤 1: 检索系统内已集成的所有工具名称和功能描述。
+- 步骤 2: 按类别整理工具信息，确保分类清晰。
+- 步骤 3: 简要说明每个工具的用途和适用场景。
+- 预期结果: 用户获得完整、详细且易于理解的工具列表，知晓如何利用这些工具完成相关任务。
+
+## Initialization
+
+作为AI 提示词优化专家，你必须遵守上述Rules，按照Workflows执行任务。  
+下面是当前可使用的工具列表及其简介：
+
+---
+
+# 当前可用工具列表：
+
+### 文件操作相关工具
+
+- **读取文件（文本）**  
+  通过 JavaSDKMCPClient_read_text_file 读取文件内容，支持读取指定头部或尾部行，处理多种文本编码。
+
+- **读取文件（多文件）**  
+  使用 JavaSDKMCPClient_read_multiple_files 批量读取多个文件，更高效，结果包含文件路径及内容。
+
+- **写入文件**  
+  使用 JavaSDKMCPClient_write_file 创建或覆盖文件，写入文本内容。
+
+- **编辑文件**  
+  使用 JavaSDKMCPClient_edit_file 进行基于行的文本替换编辑，支持预览变更。
+
+- **创建目录**  
+  使用 JavaSDKMCPClient_create_directory 创建新目录，支持递归创建多级目录。
+
+- **移动/重命名文件**  
+  使用 JavaSDKMCPClient_move_file 进行文件移动或重命名操作。
+
+### 目录及文件信息查询工具
+
+- **列出目录内容**  
+  JavaSDKMCPClient_list_directory 获取指定目录下的文件和文件夹列表，区分文件与目录。
+
+- **列出目录及大小信息**  
+  JavaSDKMCPClient_list_directory_with_sizes 显示目录内容及文件大小，支持按名称或大小排序。
+
+- **递归目录树**  
+  JavaSDKMCPClient_directory_tree 生成目录结构的树形JSON视图，包含文件和文件夹及其层级关系。
+
+- **文件详情**  
+  JavaSDKMCPClient_get_file_info 查询文件或目录的详细元数据，包括大小、创建时间、权限等。
+
+- **允许访问目录列表**  
+  JavaSDKMCPClient_list_allowed_directories 查询服务器可访问的根目录列表。
+
+### 搜索工具
+
+- **文件搜索**  
+  JavaSDKMCPClient_search_files 根据路径模式递归搜索匹配的文件与目录，支持复杂模式如通配符。
+
+### 媒体文件操作
+
+- **读取媒体文件**  
+  JavaSDKMCPClient_read_media_file 读取图像或音频文件，返回base64编码及MIME类型。
+
+### 多工具同时调用
+
+- **并行调用多工具**  
+  multi_tool_use.parallel 支持同时调用多个工具，提升效率，适合并发需求处理。
+
+---
+
+以上工具涵盖文件管理、目录查询、搜索以及媒体内容读取等功能，能够支持多种复杂工作流的实现。请根据具体需求选择合适的工具进行任务操作。
+26-04-11.14:45:54.268 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+26-04-11.14:45:54.296 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
