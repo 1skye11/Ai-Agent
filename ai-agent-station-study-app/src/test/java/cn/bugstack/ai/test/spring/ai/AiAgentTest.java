@@ -295,6 +295,15 @@ public class AiAgentTest {
 
     }
 
+    /**
+     *
+     对应服务: mcp-server-weixin-app (微信公众号通知服务)
+     功能:
+     发送微信公众号模板消息
+     通知文章发布状态
+     推送文章链接和摘要
+     * @return
+     */
     public McpSyncClient sseMcpClient01() {
 
         HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://192.168.136.128:8102").build();
@@ -307,6 +316,14 @@ public class AiAgentTest {
         return mcpSyncClient;
     }
 
+    /**
+     * 对应服务: mcp-server-csdn-app (CSDN 发帖服务)
+     * 功能:
+     *  自动发布文章到 CSDN
+     *  获取文章 URL 链接
+     * 管理文章标签和分类
+     * @return
+     */
     public McpSyncClient sseMcpClient02() {
 
         HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://192.168.136.128:8101").build();

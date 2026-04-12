@@ -1,6 +1,102 @@
-26-04-10.18:12:51.835 [boundedElastic-1] ERROR Operators              - Operator called default onErrorDropped
-reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, /Users/fuzhengwei/Desktop, /Users/fuzhengwei/Desktop]
-Caused by: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, /Users/fuzhengwei/Desktop, /Users/fuzhengwei/Desktop]
+26-04-11.17:03:49.440 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - SSE connection error
+java.util.concurrent.CompletionException: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	... 9 common frames omitted
+26-04-11.17:03:49.449 [ForkJoinPool.commonPool-worker-1] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+26-04-11.17:06:02.370 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - SSE connection error
+java.util.concurrent.CompletionException: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	... 9 common frames omitted
+26-04-11.17:06:02.379 [ForkJoinPool.commonPool-worker-1] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+26-04-11.17:10:56.806 [ForkJoinPool.commonPool-worker-1] ERROR HttpClientSseClientTransport - SSE connection error
+java.util.concurrent.CompletionException: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	... 9 common frames omitted
+26-04-11.17:10:56.814 [ForkJoinPool.commonPool-worker-1] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+Caused by: java.lang.RuntimeException: Failed to connect to SSE stream. Unexpected status code: 401
+	at io.modelcontextprotocol.client.transport.FlowSseClient.lambda$subscribe$2(FlowSseClient.java:202)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+26-04-11.17:20:40.694 [boundedElastic-1] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, D:\Desktop\xfg, D:\Desktop\xfg]
+Caused by: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, D:\Desktop\xfg, D:\Desktop\xfg]
 	at io.modelcontextprotocol.client.transport.StdioClientTransport.lambda$connect$1(StdioClientTransport.java:132)
 	at reactor.core.publisher.MonoRunnable.call(MonoRunnable.java:73)
 	at reactor.core.publisher.MonoRunnable.call(MonoRunnable.java:32)
@@ -23,131 +119,3 @@ Caused by: java.io.IOException: CreateProcess error=2, 系统找不到指定的�
 	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
 	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
 	... 12 common frames omitted
-26-04-10.18:17:11.656 [boundedElastic-1] ERROR Operators              - Operator called default onErrorDropped
-reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, /Users/fuzhengwei/Desktop, /Users/fuzhengwei/Desktop]
-Caused by: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, /Users/fuzhengwei/Desktop, /Users/fuzhengwei/Desktop]
-	at io.modelcontextprotocol.client.transport.StdioClientTransport.lambda$connect$1(StdioClientTransport.java:132)
-	at reactor.core.publisher.MonoRunnable.call(MonoRunnable.java:73)
-	at reactor.core.publisher.MonoRunnable.call(MonoRunnable.java:32)
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228)
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.io.IOException: Cannot run program "npx": CreateProcess error=2, 系统找不到指定的文件。
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-	at io.modelcontextprotocol.client.transport.StdioClientTransport.lambda$connect$1(StdioClientTransport.java:129)
-	... 10 common frames omitted
-Caused by: java.io.IOException: CreateProcess error=2, 系统找不到指定的文件。
-	at java.base/java.lang.ProcessImpl.create(Native Method)
-	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:506)
-	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-	... 12 common frames omitted
-26-04-10.18:19:42.423 [boundedElastic-1] ERROR Operators              - Operator called default onErrorDropped
-reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, /Users/fuzhengwei/Desktop, /Users/fuzhengwei/Desktop]
-Caused by: java.lang.RuntimeException: Failed to start process with command: [npx, -y, @modelcontextprotocol/server-filesystem, /Users/fuzhengwei/Desktop, /Users/fuzhengwei/Desktop]
-	at io.modelcontextprotocol.client.transport.StdioClientTransport.lambda$connect$1(StdioClientTransport.java:132)
-	at reactor.core.publisher.MonoRunnable.call(MonoRunnable.java:73)
-	at reactor.core.publisher.MonoRunnable.call(MonoRunnable.java:32)
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228)
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.io.IOException: Cannot run program "npx": CreateProcess error=2, 系统找不到指定的文件。
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-	at io.modelcontextprotocol.client.transport.StdioClientTransport.lambda$connect$1(StdioClientTransport.java:129)
-	... 10 common frames omitted
-Caused by: java.io.IOException: CreateProcess error=2, 系统找不到指定的文件。
-	at java.base/java.lang.ProcessImpl.create(Native Method)
-	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:506)
-	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-	... 12 common frames omitted
-26-04-10.18:25:35.485 [pool-2-thread-3 ] ERROR AgentRepository        - 解析传输配置失败: unclosed.str.lit N
-com.alibaba.fastjson.JSONException: unclosed.str.lit N
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:574)
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:488)
-	at cn.bugstack.ai.infrastructure.adapter.repository.AgentRepository.AiClientToolMcpVOByClientIds(AgentRepository.java:211)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
-	at cn.bugstack.ai.infrastructure.adapter.repository.AgentRepository$$SpringCGLIB$$0.AiClientToolMcpVOByClientIds(<generated>)
-	at cn.bugstack.ai.domain.agent.service.armory.business.data.impl.AiClientLoadDataStrategy.lambda$loadData$2(AiClientLoadDataStrategy.java:51)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: com.alibaba.fastjson2.JSONException: unclosed.str.lit N
-	at com.alibaba.fastjson2.JSONReader.char1(JSONReader.java:331)
-	at com.alibaba.fastjson2.JSONReaderASCII.readString(JSONReaderASCII.java:1397)
-	at com.alibaba.fastjson2.reader.ORG_2_3_Stdio.readObject(Unknown Source)
-	at com.alibaba.fastjson2.reader.ObjectReaderImplMapTyped.readObject(ObjectReaderImplMapTyped.java:344)
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:564)
-	... 16 common frames omitted
-26-04-10.18:33:08.526 [pool-2-thread-3 ] ERROR AgentRepository        - 解析传输配置失败: unclosed.str.lit N
-com.alibaba.fastjson.JSONException: unclosed.str.lit N
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:574)
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:488)
-	at cn.bugstack.ai.infrastructure.adapter.repository.AgentRepository.AiClientToolMcpVOByClientIds(AgentRepository.java:211)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
-	at cn.bugstack.ai.infrastructure.adapter.repository.AgentRepository$$SpringCGLIB$$0.AiClientToolMcpVOByClientIds(<generated>)
-	at cn.bugstack.ai.domain.agent.service.armory.business.data.impl.AiClientLoadDataStrategy.lambda$loadData$2(AiClientLoadDataStrategy.java:51)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: com.alibaba.fastjson2.JSONException: unclosed.str.lit N
-	at com.alibaba.fastjson2.JSONReader.char1(JSONReader.java:331)
-	at com.alibaba.fastjson2.JSONReaderASCII.readString(JSONReaderASCII.java:1397)
-	at com.alibaba.fastjson2.reader.ORG_2_3_Stdio.readObject(Unknown Source)
-	at com.alibaba.fastjson2.reader.ObjectReaderImplMapTyped.readObject(ObjectReaderImplMapTyped.java:344)
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:564)
-	... 16 common frames omitted
-26-04-10.18:35:42.435 [pool-2-thread-3 ] ERROR AgentRepository        - 解析传输配置失败: unclosed.str.lit D
-com.alibaba.fastjson.JSONException: unclosed.str.lit D
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:574)
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:488)
-	at cn.bugstack.ai.infrastructure.adapter.repository.AgentRepository.AiClientToolMcpVOByClientIds(AgentRepository.java:211)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
-	at cn.bugstack.ai.infrastructure.adapter.repository.AgentRepository$$SpringCGLIB$$0.AiClientToolMcpVOByClientIds(<generated>)
-	at cn.bugstack.ai.domain.agent.service.armory.business.data.impl.AiClientLoadDataStrategy.lambda$loadData$2(AiClientLoadDataStrategy.java:51)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: com.alibaba.fastjson2.JSONException: unclosed.str.lit D
-	at com.alibaba.fastjson2.JSONReader.char1(JSONReader.java:331)
-	at com.alibaba.fastjson2.JSONReaderASCII.readString(JSONReaderASCII.java:1397)
-	at com.alibaba.fastjson2.reader.ORG_2_3_Stdio.readObject(Unknown Source)
-	at com.alibaba.fastjson2.reader.ObjectReaderImplMapTyped.readObject(ObjectReaderImplMapTyped.java:344)
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:564)
-	... 16 common frames omitted

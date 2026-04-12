@@ -1,4 +1,4 @@
-package cn.bugstack.ai.test.spring.ai;
+package cn.bugstack.ai.test.spring.ai.DaoTest;
 
 import cn.bugstack.ai.infrastructure.dao.IAiClientAdvisorDao;
 import cn.bugstack.ai.infrastructure.dao.po.AiClientAdvisor;

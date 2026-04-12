@@ -42,7 +42,10 @@ public class AiClientNode extends AbstractArmorySupport {
         Map<String, AiClientSystemPromptVO> systemPromptMap = dynamicContext.getValue(AiAgentEnumVO.AI_CLIENT_SYSTEM_PROMPT.getDataName());
 
         for (AiClientVO aiClientVO : aiClientList) {
-            // 1. 预设话术
+            // 1. 预设话术// AiAgentTest.java L72-82 (硬编码版本)
+            //.defaultSystem("""
+            //    你是一个 AI Agent 智能体，可以根据用户输入信息生成文章...
+            //    """)
             StringBuilder defaultSystem = new StringBuilder("Ai 智能体 \r\n");
             List<String> promptIdList = aiClientVO.getPromptIdList();
             for (String promptId : promptIdList) {
@@ -51,16 +54,28 @@ public class AiClientNode extends AbstractArmorySupport {
             }
 
             // 2. 对话模型
+            // AiAgentTest.java L56-69
+            // chatModel = OpenAiChatModel.builder()
+            //    .openAiApi(openAiApi)
+            //    .defaultOptions(OpenAiChatOptions.builder()
+            //        .model("gpt-4.1-mini")
+            //        .build())
+            //    .build();
             OpenAiChatModel chatModel = getBean(aiClientVO.getModelBeanName());
 
-            // 3. MCP 服务
+            // 3. MCP 服务，选择是用微信功能还是csdn服务等等
             List<McpSyncClient> mcpSyncClients = new ArrayList<>();
             List<String> mcpBeanNameList = aiClientVO.getMcpBeanNameList();
             for (String mcpBeanName : mcpBeanNameList) {
                 mcpSyncClients.add(getBean(mcpBeanName));
             }
 
-            // 4. advisor 顾问角色
+            // 4. advisor 顾问角色，这段代码就是：
+            //根据数据库配置，从 Spring 容器里取出需要的 Advisor（顾问/插件），装到 AI 客户端上，让 AI 具备记忆、查资料等额外能力。
+            //就像：
+            // 给手机安装 APP
+            // 给游戏角色装备技能
+            // 给汽车加装配件（导航、音响、座椅加热）
             List<Advisor> advisors = new ArrayList<>();
             List<String> advisorBeanNameList = aiClientVO.getAdvisorBeanNameList();
             for (String advisorBeanName : advisorBeanNameList) {
