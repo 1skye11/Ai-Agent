@@ -1,9 +1,8 @@
 package cn.bugstack.ai.test.domain;
 
 import cn.bugstack.ai.domain.agent.model.entity.ArmoryCommandEntity;
-import cn.bugstack.ai.domain.agent.model.valobj.AiAgentEnumVO;
+import cn.bugstack.ai.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import cn.bugstack.ai.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
-import cn.bugstack.ai.infrastructure.dao.po.AiClient;
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 import com.alibaba.fastjson.JSON;
 import jakarta.annotation.Resource;

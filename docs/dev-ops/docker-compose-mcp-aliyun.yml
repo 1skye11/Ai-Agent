@@ -1,0 +1,58 @@
+# /usr/local/bin/docker-compose -f /docs/dev-ops/environment/environment-docker-compose-2.4.yml up -d
+version: '3.8'
+# docker-compose -f docker-compose-mcp-aliyun.yml up -d
+# 你需要修改system为你自身系统的仓库名
+services:
+  mcp-server-csdn-app:
+    #    image: fuzhengwei/mcp-server-csdn-app:1.1
+    image: registry.cn-hangzhou.aliyuncs.com/fuzhengwei/mcp-server-csdn-app:1.1
+    container_name: mcp-server-csdn-app
+    restart: always
+    ports:
+      - "8101:8101"
+    volumes:
+      - ./log:/data/log
+    environment:
+      - TZ=PRC
+      - SERVER_PORT=8101
+      - CSDN_API_CATEGORIES=Java场景面试宝典
+      - CSDN_API_COOKIE=_ga=GA1.2.571340466.1751442245; _ga_7W1N0GEY1P=GS2.1.s1751634463$o3$g1$t1751634618$j60$l0$h0; c_dl_um=-; c_dl_prid=1752390657614_163385; c_dl_rid=1752397037379_815365; c_dl_fref=https://blog.csdn.net/qq_42500831/article/details/104161766; c_dl_fpage=/download/chen_zhixiu/10600782; Hm_ct_6bcd52f51e9b3dce32bec4a3997715ac=6525*1*10_6638122820-1729586534993-444474!5744*1*2302_79904661; fid=20_19093651724-1758248050817-767929; FCNEC=%5B%5B%22AKsRol_X0a3Kyy33hHw4s6LmkpDyoveWZ3LTwr3fyp_gaCKKpVHeJ3DgjjHE5XIDAIEl1-lbo9n8qEDR7SzMgXnnDY0o3XI6Lq4vrm4W1IR9gsQEsUxLi4Kd-Xsk9-F_0yiniRKsz6rJBaI5IXe1lhUrtAOfhYJYkg%3D%3D%22%5D%5D; uuid_tt_dd=11_83244887389-1764295996436-532342; p_uid=U010000; c_ins_fpage=/index.html; c_ins_um=-; ins_first_time=1766743494756; c_ins_prid=1766743492923_634460; c_ins_rid=1766743568377_283208; c_ins_fref=https://blog.csdn.net/weixin_44976692/article/details/144183864; __eoi=ID=2ac80ba1846e8965:T=1771429558:RT=1771945724:S=AA-AfjaGi15IdCX712SPWzDN_sg3; csdn_newcert_2302_79904661=1; csdn_newcert_2501_90584078=1; UserName=2302_79904661; UserInfo=01a8c924e0ff40cb8893ade69ab1f1f9; UserToken=01a8c924e0ff40cb8893ade69ab1f1f9; UserNick=%E4%BA%8C%E6%B0%A7%E5%8C%96%E6%B0%AF; AU=358; UN=2302_79904661; BT=1775611307908; c_first_ref=cn.bing.com; c_segment=6; dc_sid=9c3c1adaa73ed3897f18672bd0f67585; Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac=1776950876,1777516877,1777564407,1777640274; HMACCOUNT=7D0B8163231A2864; dc_session_id=10_1778568848292.763720; c_first_page=https%3A//blog.csdn.net/signmem/article/details/106466113; c_dsid=11_1778574993413.958766; creative_popup=%7B%22arrowIcon%22%3A%22https%3A//i-operation.csdnimg.cn/images/4f90794e9f23476490626e0f4ab53edd.png%22%2C%22img%22%3A%22https%3A//i-operation.csdnimg.cn/images/3275a37924ed4227b291f16e3d8035b1.png%22%2C%22imgStyle%22%3A%22height%3A%2058px%3B%22%2C%22darkCfg%22%3A%7B%7D%2C%22role%22%3A%22write%22%2C%22report%22%3A%7B%22spm%22%3A%223001.11121%22%2C%22extra%22%3A%22%22%7D%2C%22style%22%3A%22%22%2C%22arrowIconStyle%22%3A%22%22%2C%22url%22%3A%22https%3A//mp.csdn.net/vip%3Futm_source%3D1078475490%22%2C%22newTab%22%3Afalse%2C%22userName%22%3A%222302_79904661%22%7D; _clck=1n0u19r%5E2%5Eg5z%5E0%5E1546; _clsk=44d4aj%5E1778574998187%5E1%5E0%5Eq.clarity.ms%2Fcollect; creative_btn_mp=3; c_pref=https%3A//blog.csdn.net/2302_79904661%3Ftype%3Dblog; c_ref=https%3A//mp.csdn.net/mp_blog/creation/editor%3Fspm%3D1001.2014.3001.4503; c_page_id=default; Hm_lpvt_6bcd52f51e9b3dce32bec4a3997715ac=1778575014; log_Id_pv=4; log_Id_view=67; dc_tos=tex1ej; log_Id_click=7; SESSION=2f662016-0af8-4242-8777-5342a32a4d05
+#      - CSDN_API_COOKIE=GA1.2.571340466.1751442245; _ga_7W1N0GEY1P=GS2.1.s1751634463$o3$g1$t1751634618$j60$l0$h0; c_dl_um=-; c_dl_prid=1752390657614_163385; c_dl_rid=1752397037379_815365; c_dl_fref=https://blog.csdn.net/qq_42500831/article/details/104161766; c_dl_fpage=/download/chen_zhixiu/10600782; Hm_ct_6bcd52f51e9b3dce32bec4a3997715ac=6525*1*10_6638122820-1729586534993-444474!5744*1*2302_79904661; fid=20_19093651724-1758248050817-767929; FCNEC=%5B%5B%22AKsRol_X0a3Kyy33hHw4s6LmkpDyoveWZ3LTwr3fyp_gaCKKpVHeJ3DgjjHE5XIDAIEl1-lbo9n8qEDR7SzMgXnnDY0o3XI6Lq4vrm4W1IR9gsQEsUxLi4Kd-Xsk9-F_0yiniRKsz6rJBaI5IXe1lhUrtAOfhYJYkg%3D%3D%22%5D%5D; uuid_tt_dd=11_83244887389-1764295996436-532342; p_uid=U010000; c_ins_fpage=/index.html; c_ins_um=-; ins_first_time=1766743494756; c_ins_prid=1766743492923_634460; c_ins_rid=1766743568377_283208; c_ins_fref=https://blog.csdn.net/weixin_44976692/article/details/144183864; __eoi=ID=2ac80ba1846e8965:T=1771429558:RT=1771945724:S=AA-AfjaGi15IdCX712SPWzDN_sg3; csdn_newcert_2302_79904661=1; _clck=1n0u19r%5E2%5Eg50%5E0%5E1546; c_first_ref=cn.bing.com; c_segment=6; creative_btn_mp=3; dc_sid=e86c02466c3138b67fa47a2e6e5ca343; Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac=1775305108,1775368663,1775375357,1775547618; HMACCOUNT=7D0B8163231A2864; c_ab_test=1; dc_session_id=10_1775568674214.181523; SESSION=269c4216-da40-42f4-8f5c-fe105a8258af; user_page_view_times=1; hide_login=1; loginbox_strategy=%7B%22taskId%22%3A317%2C%22abCheckTime%22%3A1775568852315%2C%22version%22%3A%22ExpA%22%2C%22nickName%22%3A%22%E4%BA%8C%E6%B0%A7%E5%8C%96%E6%B0%AF%22%7D; UserName=2501_90584078; UserInfo=e33d6b35516b47cb906682bf5887fc48; UserToken=e33d6b35516b47cb906682bf5887fc48; UserNick=2501_90584078; AU=BE1; UN=2501_90584078; BT=1775568893546; csdn_newcert_2501_90584078=1; c_first_page=https%3A//blog.csdn.net/blogdevteam/article/details/154347814; c_dsid=11_1775569070467.099077; c_page_id=default; _clsk=dxbi88%5E1775569073442%5E6%5E0%5Es.clarity.ms%2Fcollect; c_adb=1; log_Id_view=175; Hm_lpvt_6bcd52f51e9b3dce32bec4a3997715ac=1775569248; c_pref=https%3A//cn.bing.com/; c_ref=https%3A//graph.qq.com/; log_Id_pv=12; log_Id_click=16; dc_tos=td4m1r
+
+#      - CSDN_API_COOKIE=uuid_tt_dd=10_6645150240-1755433252939-628136; fid=20_12896762606-1755433251318-732108; c_first_ref=default; c_segment=8; https_waf_cookie=0e0b79b3-a456-4b4137d1813c84566471ee9ed9f8b3ad40e2; dc_sid=f0267d8badb04ff102f51395d26e575c; c_ab_test=1; Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac=1755433252; HMACCOUNT=D1E898D8115E0083; SESSION=3d201838-5f32-4755-b70d-5aa070bf7b95; UserName=weixin_46755643; UserInfo=e91b876fc8614f32a145263fdad14d05; UserToken=e91b876fc8614f32a145263fdad14d05; UserNick=%E5%8C%97%E4%BA%AC%E5%B0%8F%E7%A0%81%E4%BB%94; AU=1C3; UN=weixin_46755643; BT=1755433268638; p_uid=U010000; csdn_newcert_weixin_46755643=1; _clck=mcwc42%7C2%7Cfyj%7C0%7C2055; c_pref=default; dc_session_id=10_1755919660427.839630; c_first_page=https%3A//www.csdn.net/; c_dsid=11_1755919661019.727129; c-sidebar-collapse=0; Hm_lpvt_6bcd52f51e9b3dce32bec4a3997715ac=1755919661; bc_bot_session=1755919661c86fb07dedba383a; creativeSetApiNew=%7B%22toolbarImg%22%3A%22https%3A//img-home.csdnimg.cn/images/20230921102607.png%22%2C%22publishSuccessImg%22%3A%22https%3A//img-home.csdnimg.cn/images/20240229024608.png%22%2C%22articleNum%22%3A1272%2C%22type%22%3A2%2C%22oldUser%22%3Atrue%2C%22useSeven%22%3Afalse%2C%22oldFullVersion%22%3Atrue%2C%22userName%22%3A%22weixin_46755643%22%7D; creative_btn_mp=1; log_Id_view=48; log_Id_click=1; waf_captcha_marker=c22cf8fbe0c86c583cf6573ad52acfca127722eab6d69ed9736cab84ffefb2f2; c_ref=https%3A//www.csdn.net/; c_page_id=default; dc_tos=t1fgab; log_Id_pv=2
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - my-network
+
+  mcp-server-weixin-app:
+    #    image: fuzhengwei/mcp-server-weixin-app:1.1
+    image: registry.cn-hangzhou.aliyuncs.com/fuzhengwei/mcp-server-weixin-app:1.1
+    container_name: mcp-server-weixin-app
+    restart: always
+    ports:
+      - "8102:8102"
+    volumes:
+      - ./log:/data/log
+    environment:
+      - TZ=PRC
+      - SERVER_PORT=8102
+      - WEIXIN_API_ORIGINAL_ID=gh_6537373f1102
+      - WEIXIN_API_APP_ID=wx072f452674b58e03
+      - WEIXIN_API_APP_SECRET=53acdc2019fc5c250379c61633000536
+      - WEIXIN_API_TEMPLATE_ID=	sEYpurYjVKOBjdpHYQSWLyPU8ae5lADsm66cJrgmxgc
+      - WEIXIN_API_TOUSER=oryWJ2IB3FbU6hNT6aUME16zp8h0
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
