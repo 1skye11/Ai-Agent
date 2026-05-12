@@ -49,8 +49,8 @@ spring:
 #      embeddings-path: /v1/embeddings         # 新增：向量化接口路径
     agent:
       auto-config:
-        enabled: false
-        client-ids: 2101,2102,2103
+        enabled: true
+        client-ids: 2101,2102,2103,5001,5002,5006
 #    mcp:
 #      client:
 #        enabled: false  # 关闭 Spring AI 自带的 MCP 客户端，避免与数据库配置冲突

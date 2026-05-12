@@ -3,6 +3,7 @@ package cn.bugstack.ai.trigger.http;
 import cn.bugstack.ai.api.IAiAgentService;
 import cn.bugstack.ai.api.dto.AutoAgentRequestDTO;
 import cn.bugstack.ai.domain.agent.model.entity.ExecuteCommandEntity;
+import cn.bugstack.ai.domain.agent.service.IAgentDispatchService;
 import cn.bugstack.ai.domain.agent.service.execute.IExecuteStrategy;
 import com.alibaba.fastjson.JSON;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,6 +30,8 @@ public class AiAgentController implements IAiAgentService {
 
     @Resource
     private ThreadPoolExecutor threadPoolExecutor;
+    @Resource
+    private IAgentDispatchService agentDispatchService;
 
     @RequestMapping(value = "auto_agent", method = RequestMethod.POST)
     public ResponseBodyEmitter autoAgent(@RequestBody AutoAgentRequestDTO request, HttpServletResponse response) {
@@ -51,27 +54,11 @@ public class AiAgentController implements IAiAgentService {
                     .sessionId(request.getSessionId())
                     .maxStep(request.getMaxStep())
                     .build();
-            
-            // 3. 异步执行AutoAgent
-            threadPoolExecutor.execute(() -> {
-                try {
-                    autoAgentExecuteStrategy.execute(executeCommandEntity, emitter);
-                } catch (Exception e) {
-                    log.error("AutoAgent执行异常：{}", e.getMessage(), e);
-                    try {
-                        emitter.send("执行异常：" + e.getMessage());
-                    } catch (Exception ex) {
-                        log.error("发送异常信息失败：{}", ex.getMessage(), ex);
-                    }
-                } finally {
-                    try {
-                        emitter.complete();
-                    } catch (Exception e) {
-                        log.error("完成流式输出失败：{}", e.getMessage(), e);
-                    }
-                }
-            });
-            
+
+            // 3. 调度处理
+            agentDispatchService.dispatch(executeCommandEntity, emitter);
+
+
             return emitter;
 
         } catch (Exception e) {

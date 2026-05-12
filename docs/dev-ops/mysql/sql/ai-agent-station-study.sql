@@ -7,7 +7,7 @@
 #
 # 主机: 127.0.0.1 (MySQL 8.0.42)
 # 数据库: ai-agent-station-study
-# 生成时间: 2025-08-30 01:21:48 +0000
+# 生成时间: 2025-09-15 13:37:20 +0000
 # ************************************************************
 
 
@@ -33,6 +33,7 @@ CREATE TABLE `ai_agent` (
                             `agent_name` varchar(50) NOT NULL COMMENT '智能体名称',
                             `description` varchar(255) DEFAULT NULL COMMENT '描述',
                             `channel` varchar(32) DEFAULT NULL COMMENT '渠道类型(agent，chat_stream)',
+                            `strategy` varchar(64) DEFAULT NULL COMMENT '执行策略(auto、flow)',
                             `status` tinyint(1) DEFAULT '1' COMMENT '状态(0:禁用,1:启用)',
                             `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
                             `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -43,13 +44,14 @@ CREATE TABLE `ai_agent` (
 LOCK TABLES `ai_agent` WRITE;
 /*!40000 ALTER TABLE `ai_agent` DISABLE KEYS */;
 
-INSERT INTO `ai_agent` (`id`, `agent_id`, `agent_name`, `description`, `channel`, `status`, `create_time`, `update_time`)
+INSERT INTO `ai_agent` (`id`, `agent_id`, `agent_name`, `description`, `channel`, `strategy`, `status`, `create_time`, `update_time`)
 VALUES
-    (6,'1','智能对话体（Flow）','自动自主规划','agent',1,'2025-06-14 12:41:20','2025-08-24 16:41:24'),
-    (7,'2','智能对话体（MCP）','自动发帖，工具服务','chat_stream',1,'2025-06-14 12:41:20','2025-06-14 12:41:20'),
-    (8,'3','智能对话体（Auto）','文本调研自动分析和执行任务','agent',1,'2025-06-14 12:41:20','2025-08-09 10:55:46'),
-    (9,'4','智能对话体（Auto）','ES日志文件检索','agent',1,'2025-06-14 12:41:20','2025-08-09 10:55:46'),
-    (10,'5','智能对话体（Auto）-监控分析','智能监控分析服务','agent',1,'2025-06-14 12:41:20','2025-08-16 09:57:47');
+    (6,'1','智能对话体（Flow）','自动自主规划（CSDN发帖+通知）','agent','flowAgentExecuteStrategy',1,'2025-06-14 12:41:20','2025-09-04 07:32:58'),
+    (7,'2','智能对话体（MCP）','自动发帖，工具服务','chat_stream','autoAgentExecuteStrategy',1,'2025-06-14 12:41:20','2025-09-02 07:09:28'),
+    (8,'3','智能对话体（Auto）','文本调研自动分析和执行任务','agent','autoAgentExecuteStrategy',1,'2025-06-14 12:41:20','2025-09-02 07:09:22'),
+    (9,'4','智能对话体（Auto）','ES日志文件检索','agent','autoAgentExecuteStrategy',1,'2025-06-14 12:41:20','2025-09-02 07:09:22'),
+    (10,'5','智能对话体（Auto）-监控分析','智能监控分析服务','agent','autoAgentExecuteStrategy',1,'2025-06-14 12:41:20','2025-09-02 07:09:21'),
+    (11,'6','智能对话体（Fixed）','智能执行体','agent','fixedAgentExecuteStrategy',1,'2025-06-14 12:41:20','2025-09-13 15:28:34');
 
 /*!40000 ALTER TABLE `ai_agent` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -93,7 +95,8 @@ VALUES
     (13,'5','5104','智能报告生成器','RESPONSE_ASSISTANT',4,'基于以下执行过程，请直接回答用户的原始问题，提供最终的答案和结果：\n**用户原始问题:** %s\n**执行历史和过程:**\n%s\n**要求:**\n1. 直接回答用户的原始问题\n2. 基于执行过程中获得的信息和结果\n3. 提供具体、实用的最终答案\n4. 如果是要求制定计划、列表等，请直接给出完整的内容\n5. 避免只描述执行过程，重点是最终答案\n6. 以MD语法的表格形式，优化展示结果数据\n请直接给出用户问题的最终答案：',1,'2025-06-14 12:42:20'),
     (14,'1','2101','可使用工具分析','TOOL_MCP_CLIENT',1,'暂时不需要配置',0,'2025-06-14 12:42:20'),
     (15,'1','2102','任务规划','PLANNING_CLIENT',2,'暂时不需要配置',0,'2025-06-14 12:42:20'),
-    (16,'1','2103','任务执行','EXECUTOR_CLIENT',3,'暂时不需要配置',0,'2025-06-14 12:42:20');
+    (16,'1','2103','任务执行','EXECUTOR_CLIENT',3,'暂时不需要配置',0,'2025-06-14 12:42:20'),
+    (17,'6','6101','任务执行','DEFAULT',1,'暂时不需要配置',0,'2025-06-14 12:42:20');
 
 /*!40000 ALTER TABLE `ai_agent_flow_config` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -123,7 +126,7 @@ LOCK TABLES `ai_agent_task_schedule` WRITE;
 
 INSERT INTO `ai_agent_task_schedule` (`id`, `agent_id`, `task_name`, `description`, `cron_expression`, `task_param`, `status`, `create_time`, `update_time`)
 VALUES
-    (1,1,'自动发帖','自动发帖和通知','0 0/30 * * * ?','发布CSDN文章',1,'2025-06-14 12:44:05','2025-06-14 12:44:07');
+    (1,6,'自动发帖','自动发帖和通知','0/5 0 * * * ?','我需要你帮我生成一篇文章，要求如下；\n    1. 场景为互联网大厂java求职者面试\n    2. 提问的技术栈如下；\n        核心语言与平台: Java SE (8/11/17), Jakarta EE (Java EE), JVM\n        构建工具: Maven, Gradle, Ant\n        Web框架: Spring Boot, Spring MVC, Spring WebFlux, Jakarta EE, Micronaut, Quarkus, Play Framework, Struts (Legacy)\n        数据库与ORM: Hibernate, MyBatis, JPA, Spring Data JDBC, HikariCP, C3P0, Flyway, Liquibase\n        测试框架: JUnit 5, TestNG, Mockito, PowerMock, AssertJ, Selenium, Cucumber\n        微服务与云原生: Spring Cloud, Netflix OSS (Eureka, Zuul), Consul, gRPC, Apache Thrift, Kubernetes Client, OpenFeign, Resilience4j\n        安全框架: Spring Security, Apache Shiro, JWT, OAuth2, Keycloak, Bouncy Castle\n        消息队列: Kafka, RabbitMQ, ActiveMQ, JMS, Apache Pulsar, Redis Pub/Sub\n        缓存技术: Redis, Ehcache, Caffeine, Hazelcast, Memcached, Spring Cache\n        日志框架: Log4j2, Logback, SLF4J, Tinylog\n        监控与运维: Prometheus, Grafana, Micrometer, ELK Stack, New Relic, Jaeger, Zipkin\n        模板引擎: Thymeleaf, FreeMarker, Velocity, JSP/JSTL\n        REST与API工具: Swagger/OpenAPI, Spring HATEOAS, Jersey, RESTEasy, Retrofit\n        序列化: Jackson, Gson, Protobuf, Avro\n        CI/CD工具: Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes\n        大数据处理: Hadoop, Spark, Flink, Cassandra, Elasticsearch\n        版本控制: Git, SVN\n        工具库: Apache Commons, Guava, Lombok, MapStruct, JSch, POI\n        AI：Spring AI, Google A2A, MCP（模型上下文协议）, RAG（检索增强生成）, Agent（智能代理）, 聊天会话内存, 工具执行框架, 提示填充, 向量化, 语义检索, 向量数据库（Milvus/Chroma/Redis）, Embedding模型（OpenAI/Ollama）, 客户端-服务器架构, 工具调用标准化, 扩展能力, Agentic RAG, 文档加载, 企业文档问答, 复杂工作流, 智能客服系统, AI幻觉（Hallucination）, 自然语言语义搜索\n        其他: JUnit Pioneer, Dubbo, R2DBC, WebSocket\n    3. 提问的场景方案可包括但不限于；音视频场景,内容社区与UGC,AIGC,游戏与虚拟互动,电商场景,本地生活服务,共享经济,支付与金融服务,互联网医疗,健康管理,医疗供应链,企业协同与SaaS,产业互联网,大数据与AI服务,在线教育,求职招聘,智慧物流,供应链金融,智慧城市,公共服务数字化,物联网应用,Web3.0与区块链,安全与风控,广告与营销,能源与环保。                \n    4. 按照故事场景，以严肃的面试官和搞笑的水货程序员谢飞机进行提问，谢飞机对简单问题可以回答出来，回答好了面试官还会夸赞和引导。复杂问题含糊其辞，回答的不清晰。\n    5. 每次进行3轮提问，每轮可以有3-5个问题。这些问题要有技术业务场景上的衔接性，循序渐进引导提问。最后是面试官让程序员回家等通知类似的话术。\n    6. 提问后把问题的答案详细的，写到文章最后，讲述出业务场景和技术点，让小白可以学习下来。\n    根据以上内容，不要阐述其他信息，请直接提供；文章标题（需要含带技术点）、文章内容、文章标签（多个用英文逗号隔开）、文章简述（100字）\n    将以上内容发布文章到CSDN\n    之后进行，微信公众号消息通知，平台：CSDN、主题：为文章标题、描述：为文章简述、跳转地址：为发布文章到CSDN获取 http url 文章地址',1,'2025-06-14 12:44:05','2025-09-13 18:12:38');
 
 /*!40000 ALTER TABLE `ai_agent_task_schedule` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -166,7 +169,8 @@ VALUES
     (19,'5101','任务分析和状态判断','你是一个专业的任务分析师，名叫 AutoAgent Task Analyzer。',1,'2025-06-14 12:43:02','2025-07-27 17:00:55'),
     (20,'5102','具体任务执行','你是一个精准任务执行器，名叫 AutoAgent Precision Executor。',1,'2025-06-14 12:43:02','2025-07-27 17:01:10'),
     (21,'5103','质量检查和优化','你是一个专业的质量监督员，名叫 AutoAgent Quality Supervisor。',1,'2025-06-14 12:43:02','2025-07-27 17:01:23'),
-    (22,'5104','负责响应式处理','你是一个智能响应助手，名叫 AutoAgent React。',1,'2025-06-14 12:43:02','2025-08-07 14:16:47');
+    (22,'5104','负责响应式处理','你是一个智能响应助手，名叫 AutoAgent React。',1,'2025-06-14 12:43:02','2025-08-07 14:16:47'),
+    (23,'6101','CSDN发帖&通知','你是一个智能响应助手，名叫 AutoAgent React。',1,'2025-06-14 12:43:02','2025-09-13 15:35:52');
 
 /*!40000 ALTER TABLE `ai_client` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -230,7 +234,7 @@ LOCK TABLES `ai_client_api` WRITE;
 
 INSERT INTO `ai_client_api` (`id`, `api_id`, `base_url`, `api_key`, `completions_path`, `embeddings_path`, `status`, `create_time`, `update_time`)
 VALUES
-    (1,'1001','https://apis.itedus.cn','sk-69LpymflbYpzjYAQ3c96Ab2b0a7c4d20A24eD2B1340847Eb','v1/chat/completions','v1/embeddings',1,'2025-06-14 12:33:22','2025-08-24 15:16:27');
+    (1,'1001','https://apis.itedus.cn','sk-m105k00AEzWNcOHNEd077353B38346F2989940C8C02bE337','v1/chat/completions','v1/embeddings',1,'2025-06-14 12:33:22','2025-09-13 15:45:14');
 
 /*!40000 ALTER TABLE `ai_client_api` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -319,7 +323,12 @@ VALUES
     (64,'client','2102','advisor','4001','\"\"',1,'2025-06-14 12:46:49','2025-08-17 12:44:50'),
     (65,'client','2103','model','2001','\"\"',1,'2025-06-14 12:46:49','2025-08-17 12:44:51'),
     (66,'client','2103','prompt','6003','\"\"',1,'2025-06-14 12:46:49','2025-08-17 12:44:52'),
-    (67,'client','2103','advisor','4001','\"\"',1,'2025-06-14 12:46:49','2025-08-17 12:44:53');
+    (67,'client','2103','advisor','4001','\"\"',1,'2025-06-14 12:46:49','2025-08-17 12:44:53'),
+    (74,'client','6101','model','6001','\"\"',1,'2025-06-14 12:46:49','2025-09-13 15:30:32'),
+    (75,'client','6101','advisor','4001','\"\"',1,'2025-06-14 12:46:49','2025-09-13 15:30:32'),
+    (76,'client','6101','advisor','4004','\"\"',1,'2025-06-14 12:46:49','2025-09-13 15:30:32'),
+    (77,'model','6001','tool_mcp','5001','\"\"',1,'2025-06-14 12:46:49','2025-09-13 15:34:11'),
+    (78,'model','6001','tool_mcp','5002','\"\"',1,'2025-06-14 12:46:49','2025-09-13 15:34:12');
 
 /*!40000 ALTER TABLE `ai_client_config` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -354,7 +363,8 @@ VALUES
     (2,'2001','1001','gpt-4.1-mini','openai',1,'2025-06-14 12:33:47','2025-08-17 11:29:09'),
     (3,'3001','1001','gpt-5-mini','openai',1,'2025-06-14 12:33:47','2025-08-17 12:42:38'),
     (4,'4001','1001','gpt-5-mini','openai',1,'2025-06-14 12:33:47','2025-08-17 12:45:10'),
-    (5,'5001','1001','gpt-5-mini','openai',1,'2025-06-14 12:33:47','2025-08-17 12:45:12');
+    (5,'5001','1001','gpt-5-mini','openai',1,'2025-06-14 12:33:47','2025-08-17 12:45:12'),
+    (7,'6001','1001','gpt-4.1-mini','openai',1,'2025-06-14 12:33:47','2025-09-13 15:46:54');
 
 /*!40000 ALTER TABLE `ai_client_model` ENABLE KEYS */;
 UNLOCK TABLES;
