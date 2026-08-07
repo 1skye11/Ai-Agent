@@ -16,8 +16,8 @@ thread:
 spring:
   datasource:
     mysql:
-      username: root
-      password: 15060585753
+      username:
+      password:
       url: jdbc:mysql://localhost:3306/ai-agent-station-study?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
       driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.zaxxer.hikari.HikariDataSource
@@ -32,9 +32,9 @@ spring:
         connection-test-query: SELECT 1
     pgvector:
       driver-class-name: org.postgresql.Driver
-      username: postgres
-      password: postgres
-      url: jdbc:postgresql://192.168.136.128:15432/ai-rag-knowledge
+      username:
+      password:
+      url:
       type: com.zaxxer.hikari.HikariDataSource
       hikari:
         maximum-pool-size: 5
@@ -43,17 +43,33 @@ spring:
         connection-timeout: 30000
   ai:
     openai:
-      base-url: https://apis.itedus.cn
-      api-key: sk-m105k00AEzWNcOHNEd077353B38346F2989940C8C02bE337
+      base-url:
+      api-key:
 #      completions-path: /v1/chat/completions  # 新增：聊天接口路径
 #      embeddings-path: /v1/embeddings         # 新增：向量化接口路径
     agent:
       auto-config:
-        enabled: true
-        client-ids: 2101,2102,2103,5001,5002,5006
+        enabled: false
+        client-ids: 6101
 #    mcp:
 #      client:
 #        enabled: false  # 关闭 Spring AI 自带的 MCP 客户端，避免与数据库配置冲突
+
+# 小傅哥扳手通用组件配置
+xfg:
+  wrench:
+    # 任务调度配置
+    task:
+      job:
+        enabled: true
+        pool-size: 5
+        thread-name-prefix: "test-task-scheduler-"
+        wait-for-tasks-to-complete-on-shutdown: true
+        await-termination-seconds: 30
+        refresh-interval: 30000
+        clean-invalid-tasks-cron: "0 0/5 * * * ?"
+
+
 
 # 日志
 logging:

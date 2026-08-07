@@ -20,7 +20,7 @@ public class MiniMaxApiKeyTest {
             // 构建 OpenAI API 客户端（MiniMax 兼容 OpenAI 格式）
             OpenAiApi openAiApi = OpenAiApi.builder()
                     .baseUrl("https://api.minimax.chat")
-                    .apiKey("sk-cp-GVkRYHECDdlzOysAYMTyCmCQfIdwzS1maosJzNHHK7bJGkHobugUGzhNJ6x4chDMc4U_FStD-Yb7tFLzKBMmtwCHqsuozhtoST0K92ylkrnR8TRafMkqhNs")
+                    .apiKey("REPLACE_WITH_YOUR_API_KEY")
                     .completionsPath("v1/chat/completions")
                     .embeddingsPath("v1/embeddings")
                     .build();

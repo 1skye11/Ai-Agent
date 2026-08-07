@@ -4,7 +4,7 @@ import cn.bugstack.ai.domain.agent.adapter.repository.IAgentRepository;
 import cn.bugstack.ai.domain.agent.model.entity.ExecuteCommandEntity;
 import cn.bugstack.ai.domain.agent.model.valobj.AiAgentVO;
 import cn.bugstack.ai.domain.agent.service.IAgentDispatchService;
-import cn.bugstack.ai.domain.agent.service.execute.IExecuteStrategy;
+import cn.bugstack.ai.domain.agent.service.IExecuteStrategy;
 import cn.bugstack.ai.types.exception.BizException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

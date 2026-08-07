@@ -2,7 +2,7 @@ package cn.bugstack.ai.domain.agent.service.execute.auto;
 
 import cn.bugstack.ai.domain.agent.model.entity.AutoAgentExecuteResultEntity;
 import cn.bugstack.ai.domain.agent.model.entity.ExecuteCommandEntity;
-import cn.bugstack.ai.domain.agent.service.execute.IExecuteStrategy;
+import cn.bugstack.ai.domain.agent.service.IExecuteStrategy;
 import cn.bugstack.ai.domain.agent.service.execute.auto.step.factory.DefaultAutoAgentExecuteStrategyFactory;
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
 import com.alibaba.fastjson.JSON;

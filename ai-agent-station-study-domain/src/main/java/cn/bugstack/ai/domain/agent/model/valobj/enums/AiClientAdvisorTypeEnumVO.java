@@ -9,7 +9,7 @@ import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
-import cn.bugstack.ai.domain.agent.service.armory.factory.element.RagAnswerAdvisor;
+import cn.bugstack.ai.domain.agent.service.armory.node.factory.element.RagAnswerAdvisor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,20 +25,6 @@ import java.util.Map;
 @NoArgsConstructor
 public enum AiClientAdvisorTypeEnumVO {
 
-    /**
-     * 这边代码很优雅
-     * 调用: AiClientAdvisorTypeEnumVO.getByCode("ChatMemory")
-     *     ↓
-     * CODE_MAP.get("ChatMemory")  ← O(1) 查找
-     *     ↓
-     * 返回 CHAT_MEMORY 枚举常量
-     *     ↓
-     * 调用: CHAT_MEMORY.createAdvisor(vo, vs)  ← 多态调用
-     *     ↓
-     * 执行 CHAT_MEMORY 的实现代码
-     *     ↓
-     * 返回 PromptChatMemoryAdvisor
-     */
     CHAT_MEMORY("ChatMemory", "上下文记忆（内存模式）") {
         @Override
         public Advisor createAdvisor(AiClientAdvisorVO aiClientAdvisorVO, VectorStore vectorStore) {
@@ -50,7 +36,7 @@ public enum AiClientAdvisorTypeEnumVO {
             ).build();
         }
     },
-    
+
     RAG_ANSWER("RagAnswer", "知识库") {
         @Override
         public Advisor createAdvisor(AiClientAdvisorVO aiClientAdvisorVO, VectorStore vectorStore) {
@@ -61,22 +47,22 @@ public enum AiClientAdvisorTypeEnumVO {
                     .build());
         }
     }
-    
+
     ;
 
     private String code;
     private String info;
-    
+
     // 静态Map缓存，用于快速查找
     private static final Map<String, AiClientAdvisorTypeEnumVO> CODE_MAP = new HashMap<>();
-    
+
     // 静态初始化块，在类加载时初始化Map
     static {
         for (AiClientAdvisorTypeEnumVO enumVO : values()) {
             CODE_MAP.put(enumVO.getCode(), enumVO);
         }
     }
-    
+
     /**
      * 策略方法：创建顾问对象
      * @param aiClientAdvisorVO 顾问配置对象
@@ -84,7 +70,7 @@ public enum AiClientAdvisorTypeEnumVO {
      * @return 顾问对象
      */
     public abstract Advisor createAdvisor(AiClientAdvisorVO aiClientAdvisorVO, VectorStore vectorStore);
-    
+
     /**
      * 根据code获取枚举
      * @param code 编码

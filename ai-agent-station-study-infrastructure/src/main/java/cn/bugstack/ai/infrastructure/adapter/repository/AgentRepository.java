@@ -296,8 +296,6 @@ public class AgentRepository implements IAgentRepository {
                 ));
     }
 
-
-
     @Override
     public List<AiClientAdvisorVO> AiClientAdvisorVOByClientIds(List<String> clientIdList) {
         if (clientIdList == null || clientIdList.isEmpty()) {
@@ -498,7 +496,6 @@ public class AgentRepository implements IAgentRepository {
         return result;
     }
 
-
     @Override
     public Map<String, AiAgentClientFlowConfigVO> queryAiAgentClientFlowConfig(String aiAgentId) {
         if (aiAgentId == null || aiAgentId.trim().isEmpty()) {
@@ -552,5 +549,74 @@ public class AgentRepository implements IAgentRepository {
                 .build();
     }
 
+    @Override
+    public List<AiAgentClientFlowConfigVO> queryAiAgentClientsByAgentId(String aiAgentId) {
+        List<AiAgentClientFlowConfigVO> aiAgentClientFlowConfigVOS = new ArrayList<>();
+
+        List<AiAgentFlowConfig> flowConfigs = aiAgentFlowConfigDao.queryByAgentId(aiAgentId);
+        for (AiAgentFlowConfig flowConfig : flowConfigs) {
+            AiAgentClientFlowConfigVO configVO = AiAgentClientFlowConfigVO.builder()
+                    .clientId(flowConfig.getClientId())
+                    .clientName(flowConfig.getClientName())
+                    .clientType(flowConfig.getClientType())
+                    .sequence(flowConfig.getSequence())
+                    .stepPrompt(flowConfig.getStepPrompt())
+                    .build();
+
+            aiAgentClientFlowConfigVOS.add(configVO);
+        }
+
+        return aiAgentClientFlowConfigVOS;
+    }
+
+    @Override
+    public List<AiAgentTaskScheduleVO> queryAllValidTaskSchedule() {
+        List<AiAgentTaskSchedule> aiAgentTaskSchedules = aiAgentTaskScheduleDao.queryAllValidTaskSchedule();
+
+        List<AiAgentTaskScheduleVO> result = new ArrayList<>();
+        for (AiAgentTaskSchedule taskSchedule : aiAgentTaskSchedules) {
+            AiAgentTaskScheduleVO taskScheduleVO = AiAgentTaskScheduleVO.builder()
+                    .id(taskSchedule.getId())
+                    .agentId(taskSchedule.getAgentId())
+                    .description(taskSchedule.getDescription())
+                    .cronExpression(taskSchedule.getCronExpression())
+                    .taskParam(taskSchedule.getTaskParam())
+                    .build();
+            result.add(taskScheduleVO);
+        }
+
+        return result;
+    }
+
+    @Override
+    public List<Long> queryAllInvalidTaskScheduleIds() {
+        return aiAgentTaskScheduleDao.queryAllInvalidTaskScheduleIds();
+    }
+
+    @Override
+    public void createTagOrder(AiRagOrderVO aiRagOrderVO) {
+        AiClientRagOrder aiRagOrder = new AiClientRagOrder();
+        aiRagOrder.setRagName(aiRagOrderVO.getRagName());
+        aiRagOrder.setKnowledgeTag(aiRagOrderVO.getKnowledgeTag());
+        aiRagOrder.setStatus(1);
+        aiClientRagOrderDao.insert(aiRagOrder);
+    }
+
+    @Override
+    public List<AiAgentVO> queryAvailableAgents() {
+        List<AiAgent> aiAgents = aiAgentDao.queryEnabledAgents();
+        List<AiAgentVO> aiAgentVOS = new ArrayList<>();
+        for (AiAgent aiAgent : aiAgents) {
+            aiAgentVOS.add(AiAgentVO.builder()
+                    .agentId(aiAgent.getAgentId())
+                    .agentName(aiAgent.getAgentName())
+                    .description(aiAgent.getDescription())
+                    .channel(aiAgent.getChannel())
+                    .strategy(aiAgent.getStrategy())
+                    .status(aiAgent.getStatus())
+                    .build());
+        }
+        return aiAgentVOS;
+    }
 
 }

@@ -36,7 +36,7 @@ public class AiSearchMCPTest {
         OpenAiChatModel chatModel = OpenAiChatModel.builder()
                 .openAiApi(OpenAiApi.builder()
                         .baseUrl("https://apis.itedus.cn")
-                        .apiKey("sk-PEiDkW6g3yH9aziqAe09F577B9E342D297D997E3AcD14724")
+                        .apiKey("REPLACE_WITH_YOUR_API_KEY")
                         .completionsPath("v1/chat/completions")
                         .embeddingsPath("v1/embeddings")
                         .build())
@@ -52,7 +52,7 @@ public class AiSearchMCPTest {
 
     public McpSyncClient sseMcpClient() {
         HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://appbuilder.baidu.com/v2/ai_search/mcp/")
-                .sseEndpoint("sse?api_key=bce-v3/ALTAK-3FcXFmMaDhVQKZYXdUL6t/e621b9bb5b199e384e6e3b34b943ddb3fd38ddc0")
+                .sseEndpoint("sse?api_key=REPLACE_WITH_YOUR_API_KEY")
                 .build();
 
         McpSyncClient mcpSyncClient = McpClient.sync(sseClientTransport).requestTimeout(Duration.ofMinutes(360)).build();

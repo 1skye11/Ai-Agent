@@ -5,7 +5,7 @@ import cn.bugstack.ai.domain.agent.model.entity.ArmoryCommandEntity;
 import cn.bugstack.ai.domain.agent.model.valobj.*;
 import cn.bugstack.ai.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import cn.bugstack.ai.domain.agent.service.armory.business.data.ILoadDataStrategy;
-import cn.bugstack.ai.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
+import cn.bugstack.ai.domain.agent.service.armory.node.factory.DefaultArmoryStrategyFactory;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 异步加载策略，以客户端串联，加载数据策略
+ * 以客户端串联，加载数据策略
  *
  * @author xiaofuge bugstack.cn @小傅哥
  * 2025/6/27 17:20
@@ -35,9 +35,6 @@ public class AiClientLoadDataStrategy implements ILoadDataStrategy {
     public void loadData(ArmoryCommandEntity armoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) {
         List<String> clientIdList = armoryCommandEntity.getCommandIdList();
 
-        /**
-         * 用于根据客户端 ID 列表并行查询 AI 客户端相关的配置数据。创建一个异步任务，未来会返回 AiClientApiVO 列表
-         */
         CompletableFuture<List<AiClientApiVO>> aiClientApiListFuture = CompletableFuture.supplyAsync(() -> {
             log.info("查询配置数据(ai_client_api) {}", clientIdList);
             return repository.queryAiClientApiVOListByClientIds(clientIdList);
@@ -53,7 +50,7 @@ public class AiClientLoadDataStrategy implements ILoadDataStrategy {
             return repository.AiClientToolMcpVOByClientIds(clientIdList);
         }, threadPoolExecutor);
 
-        CompletableFuture<Map<String,AiClientSystemPromptVO> > aiClientSystemPromptListFuture = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture<Map<String, AiClientSystemPromptVO>> aiClientSystemPromptListFuture = CompletableFuture.supplyAsync(() -> {
             log.info("查询配置数据(ai_client_system_prompt) {}", clientIdList);
             return repository.queryAiClientSystemPromptMapByClientIds(clientIdList);
         }, threadPoolExecutor);
@@ -68,9 +65,6 @@ public class AiClientLoadDataStrategy implements ILoadDataStrategy {
             return repository.AiClientVOByClientIds(clientIdList);
         }, threadPoolExecutor);
 
-        /**
-         * 获取所有结果，并将结果保存在 DynamicContext 中
-         */
         CompletableFuture.allOf(aiClientApiListFuture).thenRun(() -> {
             dynamicContext.setValue(AiAgentEnumVO.AI_CLIENT_API.getDataName(), aiClientApiListFuture.join());
             dynamicContext.setValue(AiAgentEnumVO.AI_CLIENT_MODEL.getDataName(), aiClientModelListFuture.join());
@@ -80,7 +74,6 @@ public class AiClientLoadDataStrategy implements ILoadDataStrategy {
             dynamicContext.setValue(AiAgentEnumVO.AI_CLIENT.getDataName(), aiClientListFuture.join());
 
         }).join();
-
 
     }
 

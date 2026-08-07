@@ -1,0 +1,20 @@
+﻿[Unit]
+Description=AI Agent Station Study
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ai-agent
+Group=ai-agent
+WorkingDirectory=/opt/ai-agent/app
+ExecStart=/usr/bin/java -Xms2g -Xmx2g -server -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/ai-agent/logs/heap.hprof -Dspring.profiles.active=prod --spring.config.location=/opt/ai-agent/config/ -jar /opt/ai-agent/app/app.jar
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/opt/ai-agent/logs/stdout.log
+StandardError=append:/opt/ai-agent/logs/stderr.log
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

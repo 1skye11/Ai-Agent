@@ -51,7 +51,7 @@ public class FlowAgentTest {
     public void init() {
         OpenAiApi openAiApi = OpenAiApi.builder()
                 .baseUrl("https://apis.itedus.cn")
-                .apiKey("sk-04FRZbYTs4lavU0a066e1e0a79D249D59a42B09b3240197b")
+                .apiKey("REPLACE_WITH_YOUR_API_KEY")
                 .completionsPath("v1/chat/completions")
                 .embeddingsPath("v1/embeddings")
                 .build();
@@ -824,7 +824,7 @@ public class FlowAgentTest {
 
     public McpSyncClient sseMcpClient_BaiduSearch() {
         HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://appbuilder.baidu.com/v2/ai_search/mcp/")
-                .sseEndpoint("sse?api_key=bce-v3/ALTAK-3zODLb9qHozIftQlGwez5/2696e92781f5bf1ba1870e2958f239fd6dc822a4")
+                .sseEndpoint("sse?api_key=REPLACE_WITH_YOUR_API_KEY")
                 .build();
 
         McpSyncClient mcpSyncClient = McpClient.sync(sseClientTransport).requestTimeout(Duration.ofMinutes(360)).build();

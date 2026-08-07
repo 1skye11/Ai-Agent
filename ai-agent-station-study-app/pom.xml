@@ -108,6 +108,13 @@
             <groupId>cn.bugstack.ai</groupId>
             <artifactId>ai-agent-station-study-trigger</artifactId>
         </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>cn.bugstack.wrench</groupId>-->
+        <!--            <artifactId>xfg-wrench-starter-task-job</artifactId>-->
+        <!--        </dependency>-->
+
+
         <dependency>
             <groupId>cn.bugstack.ai</groupId>
             <artifactId>ai-agent-station-study-infrastructure</artifactId>

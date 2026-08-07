@@ -55,7 +55,7 @@ public class AiAgentTest {
 
         OpenAiApi openAiApi = OpenAiApi.builder()
                 .baseUrl("https://apis.itedus.cn")
-                .apiKey("sk-PEiDkW6g3yH9aziqAe09F577B9E342D297D997E3AcD14724")
+                .apiKey("REPLACE_WITH_YOUR_API_KEY")
                 .completionsPath("v1/chat/completions")
                 .embeddingsPath("v1/embeddings")
                 .build();

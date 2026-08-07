@@ -42,7 +42,7 @@ public class FlowAgentMCPTest {
         OpenAiChatModel chatModel = OpenAiChatModel.builder()
                 .openAiApi(OpenAiApi.builder()
                         .baseUrl("https://apis.itedus.cn")
-                        .apiKey("sk-enjR9nNWV6kfwkxtDaA670E7F8Ef40F2A1Cd44767d62Ee3d")
+                        .apiKey("REPLACE_WITH_YOUR_API_KEY")
                         .completionsPath("v1/chat/completions")
                         .embeddingsPath("v1/embeddings")
                         .build())
@@ -86,7 +86,7 @@ public class FlowAgentMCPTest {
     public McpSyncClient stdioMcpClient_Grafana() {
         Map<String, String> env = new HashMap<>();
         env.put("GRAFANA_URL", "http://192.168.136.128:9200");
-        env.put("GRAFANA_API_KEY", "glsa_oIxKFprRBVG5e7wf6ykNzHsc8DG2URl6_de061d1f");
+        env.put("GRAFANA_API_KEY", "REPLACE_WITH_YOUR_GRAFANA_API_KEY");
 
         var stdioParams = ServerParameters.builder("docker")
                 .args("run",
@@ -113,7 +113,7 @@ public class FlowAgentMCPTest {
 
     public McpSyncClient sseMcpClient_BaiduSearch() {
         HttpClientSseClientTransport sseClientTransport = HttpClientSseClientTransport.builder("http://appbuilder.baidu.com/v2/ai_search/mcp/")
-                .sseEndpoint("sse?api_key=bce-v3/ALTAK-3zODLb9qHozIftQlGwez5/2696e92781f5bf1ba1870e2958f239fd6dc822a4")
+                .sseEndpoint("sse?api_key=REPLACE_WITH_YOUR_API_KEY")
                 .build();
 
         McpSyncClient mcpSyncClient = McpClient.sync(sseClientTransport).requestTimeout(Duration.ofMinutes(360)).build();

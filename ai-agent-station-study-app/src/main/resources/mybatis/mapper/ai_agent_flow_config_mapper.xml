@@ -17,16 +17,16 @@
         INSERT INTO ai_agent_flow_config (
             agent_id, client_id, client_name, client_type, sequence, step_prompt, create_time
         ) VALUES (
-                     #{agentId}, #{clientId}, #{clientName}, #{clientType}, #{sequence}, #{stepPrompt}, #{createTime}
-                 )
+            #{agentId}, #{clientId}, #{clientName}, #{clientType}, #{sequence}, #{stepPrompt}, #{createTime}
+        )
     </insert>
 
     <update id="updateById" parameterType="cn.bugstack.ai.infrastructure.dao.po.AiAgentFlowConfig">
         UPDATE ai_agent_flow_config SET
-                                        agent_id = #{agentId},
-                                        client_id = #{clientId},
-                                        sequence = #{sequence},
-                                        step_prompt = #{stepPrompt}
+            agent_id = #{agentId},
+            client_id = #{clientId},
+            sequence = #{sequence},
+            step_prompt = #{stepPrompt}
         WHERE id = #{id}
     </update>
 
@@ -34,7 +34,7 @@
         DELETE FROM ai_agent_flow_config WHERE id = #{id}
     </delete>
 
-    <delete id="deleteByAgentId" parameterType="java.lang.Long">
+    <delete id="deleteByAgentId" parameterType="java.lang.String">
         DELETE FROM ai_agent_flow_config WHERE agent_id = #{agentId}
     </delete>
 
@@ -59,13 +59,13 @@
     </select>
 
     <select id="queryByAgentIdAndClientId" resultMap="AiAgentFlowConfigMap">
-        SELECT id, agent_id, client_id, client_name, client_type, sequence,  step_prompt,create_time
+        SELECT id, agent_id, client_id, client_name, client_type, sequence, step_prompt, create_time
         FROM ai_agent_flow_config
         WHERE agent_id = #{agentId} AND client_id = #{clientId}
     </select>
 
     <select id="queryAll" resultMap="AiAgentFlowConfigMap">
-        SELECT id, agent_id, client_id, client_name, client_type, sequence,  step_prompt,create_time
+        SELECT id, agent_id, client_id, client_name, client_type, sequence, step_prompt, create_time
         FROM ai_agent_flow_config
         ORDER BY agent_id ASC, sequence ASC
     </select>

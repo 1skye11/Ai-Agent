@@ -27,6 +27,11 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
+        <!--        <dependency>-->
+        <!--            <groupId>cn.bugstack.wrench</groupId>-->
+        <!--            <artifactId>xfg-wrench-starter-task-job</artifactId>-->
+        <!--        </dependency>-->
+
         <!-- 系统模块 -->
         <dependency>
             <groupId>cn.bugstack.ai</groupId>
@@ -39,6 +44,10 @@
         <dependency>
             <groupId>cn.bugstack.ai</groupId>
             <artifactId>ai-agent-station-study-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bugstack.ai</groupId>
+            <artifactId>ai-agent-station-study-infrastructure</artifactId>
         </dependency>
     </dependencies>
 

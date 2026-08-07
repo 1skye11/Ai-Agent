@@ -26,7 +26,7 @@ public class AiAgentTaskSchedule {
     /**
      * 智能体ID
      */
-    private Long agentId;
+    private String agentId;
 
     /**
      * 任务名称

@@ -5,7 +5,7 @@ import cn.bugstack.ai.domain.agent.model.entity.ArmoryCommandEntity;
 import cn.bugstack.ai.domain.agent.model.valobj.AiClientApiVO;
 import cn.bugstack.ai.domain.agent.model.valobj.AiClientModelVO;
 import cn.bugstack.ai.domain.agent.service.armory.business.data.ILoadDataStrategy;
-import cn.bugstack.ai.domain.agent.service.armory.factory.DefaultArmoryStrategyFactory;
+import cn.bugstack.ai.domain.agent.service.armory.node.factory.DefaultArmoryStrategyFactory;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 2025/6/28 20:12
  */
 @Slf4j
-@Service
+@Service("aiClientModelLoadDataStrategy")
 public class AiClientModelLoadDataStrategy implements ILoadDataStrategy {
 
     @Resource

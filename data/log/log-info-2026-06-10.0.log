@@ -1,0 +1,98 @@
+26-06-10.00:20:19.781 [main            ] INFO  Application            - Starting Application using Java 21.0.6 with PID 36584 (D:\Desktop\xfg\ai-agent\ai-agent-station-study-app\target\classes started by 12240 in D:\Desktop\xfg\ai-agent)
+26-06-10.00:20:19.783 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+26-06-10.00:20:28.910 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+26-06-10.00:20:28.938 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+26-06-10.00:20:28.941 [main            ] INFO  StandardService        - Starting service [Tomcat]
+26-06-10.00:20:28.941 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+26-06-10.00:20:29.591 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+26-06-10.00:20:29.592 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9729 ms
+26-06-10.00:20:42.963 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store. Is empty: false
+26-06-10.00:20:43.005 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store in schema: public
+26-06-10.00:20:43.005 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+26-06-10.00:20:43.006 [main            ] DEBUG PgVectorStore          - Skipping the schema initialization for the table: public.vector_store
+26-06-10.00:20:43.891 [main            ] INFO  TaskJobAutoConfig      - xfg-wrench，任务调度器初始化完成。线程池大小: 5, 线程名前缀: test-task-scheduler-
+26-06-10.00:20:43.925 [main            ] INFO  TaskJobService         - 开始初始化任务调度配置
+26-06-10.00:20:44.189 [main            ] INFO  HikariDataSource       - MainHikariPool - Starting...
+26-06-10.00:20:47.124 [main            ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ca59269
+26-06-10.00:20:47.126 [main            ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+26-06-10.00:20:47.295 [main            ] INFO  TaskJobService         - 任务调度配置初始化完成，已加载任务数: 0
+26-06-10.00:20:47.303 [main            ] INFO  TaskJobAutoConfig      - xfg-wrench，任务调度作业初始化完成。刷新间隔: 30000ms, 清理cron: 0 0/5 * * * ?
+26-06-10.00:20:47.571 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+26-06-10.00:20:48.733 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+26-06-10.00:20:48.769 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/'
+26-06-10.00:20:48.788 [main            ] INFO  Application            - Started Application in 31.877 seconds (process running for 47.625)
+26-06-10.00:20:48.790 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:20:48.793 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:21:18.785 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:21:18.789 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:21:48.781 [test-task-scheduler-3] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:21:48.784 [test-task-scheduler-3] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:22:18.780 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:22:18.783 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:22:48.777 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:22:48.797 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:23:18.774 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:23:18.776 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:23:48.770 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:23:48.774 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:24:18.766 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:24:18.770 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:24:48.765 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:24:48.770 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:24:59.977 [test-task-scheduler-3] INFO  TaskJobService         - 开始清理无效的任务
+26-06-10.00:25:00.525 [test-task-scheduler-3] INFO  TaskJobService         - 发现1个无效任务需要清理
+26-06-10.00:25:00.526 [test-task-scheduler-3] INFO  TaskJobService         - 无效任务清理完成，当前活跃任务数: 0
+26-06-10.00:25:18.761 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:25:18.764 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:25:48.758 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:25:48.764 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:26:18.756 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:26:18.759 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:26:48.752 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:26:48.755 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:27:18.750 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:27:18.753 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:27:48.747 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:27:48.750 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:28:18.742 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:28:18.744 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:28:46.021 [http-nio-8091-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+26-06-10.00:28:46.026 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+26-06-10.00:28:46.266 [http-nio-8091-exec-1] INFO  DispatcherServlet      - Completed initialization in 240 ms
+26-06-10.00:28:48.740 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:28:48.742 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:29:18.737 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:29:18.740 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:29:48.733 [test-task-scheduler-4] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:29:48.735 [test-task-scheduler-4] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:29:59.972 [test-task-scheduler-5] INFO  TaskJobService         - 开始清理无效的任务
+26-06-10.00:29:59.974 [test-task-scheduler-5] INFO  TaskJobService         - 发现1个无效任务需要清理
+26-06-10.00:29:59.975 [test-task-scheduler-5] INFO  TaskJobService         - 无效任务清理完成，当前活跃任务数: 0
+26-06-10.00:30:18.733 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:30:18.735 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:30:48.729 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:30:48.731 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:31:18.835 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:31:18.842 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:31:37.065 [http-nio-8091-exec-9] INFO  AdminUserAdminController - 管理员用户登录校验请求：admin
+26-06-10.00:31:37.600 [http-nio-8091-exec-3] INFO  AiAgentDataStatisticsAdminController - 开始获取系统数据统计
+26-06-10.00:31:38.109 [http-nio-8091-exec-3] INFO  AiAgentDataStatisticsAdminController - 系统数据统计获取成功：智能体数量=8, 客户端数量=18, MCP工具数量=8, 系统提示数量=15, 知识库数量=1, 顾问数量=5, 模型数量=7
+26-06-10.00:31:45.700 [http-nio-8091-exec-7] INFO  AiAgentDrawAdminController - 查询拖拉拽流程图配置列表请求：AiAgentDrawConfigQueryRequestDTO(configId=null, configName=null, agentId=null, status=null, pageNum=1, pageSize=10)
+26-06-10.00:31:48.721 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:31:48.744 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:31:56.695 [http-nio-8091-exec-2] INFO  AiClientToolMcpAdminController - 查询所有MCP客户端配置
+26-06-10.00:32:18.721 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:32:18.724 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:32:48.717 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:32:48.868 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:32:49.751 [http-nio-8091-exec-6] INFO  AiClientModelAdminController - 根据条件查询AI客户端模型配置列表请求：AiClientModelQueryRequestDTO(modelId=null, apiId=null, modelType=null, status=null)
+26-06-10.00:33:18.716 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:33:18.719 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:33:48.713 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-10.00:33:48.718 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 0
+26-06-10.00:33:51.227 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+26-06-10.00:33:51.335 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+26-06-10.00:33:51.459 [SpringApplicationShutdownHook] INFO  TaskJobService         - 开始停止所有任务
+26-06-10.00:33:51.460 [SpringApplicationShutdownHook] INFO  TaskJobService         - 所有任务已停止
+26-06-10.00:33:51.468 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+26-06-10.00:33:51.564 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
