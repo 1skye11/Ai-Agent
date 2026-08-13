@@ -1,0 +1,113 @@
+26-06-09.21:59:52.814 [main            ] INFO  Application            - Starting Application using Java 21.0.6 with PID 29660 (D:\Desktop\xfg\ai-agent\ai-agent-station-study-app\target\classes started by 12240 in D:\Desktop\xfg\ai-agent)
+26-06-09.21:59:52.816 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+26-06-09.21:59:56.423 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+26-06-09.21:59:56.453 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+26-06-09.21:59:56.457 [main            ] INFO  StandardService        - Starting service [Tomcat]
+26-06-09.21:59:56.457 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+26-06-09.21:59:56.705 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+26-06-09.21:59:56.706 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3796 ms
+26-06-09.21:59:58.790 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store. Is empty: false
+26-06-09.21:59:58.799 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store in schema: public
+26-06-09.21:59:58.799 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+26-06-09.21:59:58.801 [main            ] DEBUG PgVectorStore          - Skipping the schema initialization for the table: public.vector_store
+26-06-09.21:59:59.054 [main            ] INFO  TaskJobAutoConfig      - xfg-wrench，任务调度器初始化完成。线程池大小: 5, 线程名前缀: test-task-scheduler-
+26-06-09.21:59:59.065 [main            ] INFO  TaskJobService         - 开始初始化任务调度配置
+26-06-09.21:59:59.109 [main            ] INFO  HikariDataSource       - MainHikariPool - Starting...
+26-06-09.21:59:59.575 [main            ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@1aaea04b
+26-06-09.21:59:59.577 [main            ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+26-06-09.22:00:03.875 [main            ] INFO  TaskJobService         - 开始调度任务，ID: 1, 描述: 自动发帖和通知, Cron表达式: 0/5 0 * * * ?
+26-06-09.22:00:03.899 [main            ] INFO  TaskJobService         - 任务调度成功（函数式），ID: 1
+26-06-09.22:00:03.900 [main            ] INFO  TaskJobService         - 任务调度配置初始化完成，已加载任务数: 1
+26-06-09.22:00:03.903 [main            ] INFO  TaskJobAutoConfig      - xfg-wrench，任务调度作业初始化完成。刷新间隔: 30000ms, 清理cron: 0 0/5 * * * ?
+26-06-09.22:00:04.105 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+26-06-09.22:00:04.822 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/'
+26-06-09.22:00:04.836 [main            ] INFO  Application            - Started Application in 13.21 seconds (process running for 15.304)
+26-06-09.22:00:04.838 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.22:00:04.839 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+26-06-09.22:00:04.842 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.22:00:04.853 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+26-06-09.22:00:04.858 [SpringApplicationShutdownHook] INFO  TaskJobService         - 开始停止所有任务
+26-06-09.22:00:04.859 [SpringApplicationShutdownHook] INFO  TaskJobService         - 已取消任务，ID: 1
+26-06-09.22:00:04.859 [SpringApplicationShutdownHook] INFO  TaskJobService         - 所有任务已停止
+26-06-09.22:00:04.861 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+26-06-09.22:00:04.877 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.
+26-06-09.23:06:50.337 [main            ] INFO  Application            - Starting Application using Java 21.0.6 with PID 37392 (D:\Desktop\xfg\ai-agent\ai-agent-station-study-app\target\classes started by 12240 in D:\Desktop\xfg\ai-agent)
+26-06-09.23:06:50.339 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+26-06-09.23:06:53.985 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8091 (http)
+26-06-09.23:06:54.015 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+26-06-09.23:06:54.017 [main            ] INFO  StandardService        - Starting service [Tomcat]
+26-06-09.23:06:54.018 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+26-06-09.23:06:54.229 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+26-06-09.23:06:54.229 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3784 ms
+26-06-09.23:06:58.749 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store. Is empty: false
+26-06-09.23:06:58.786 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store in schema: public
+26-06-09.23:06:58.787 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+26-06-09.23:06:58.787 [main            ] DEBUG PgVectorStore          - Skipping the schema initialization for the table: public.vector_store
+26-06-09.23:06:59.215 [main            ] INFO  TaskJobAutoConfig      - xfg-wrench，任务调度器初始化完成。线程池大小: 5, 线程名前缀: test-task-scheduler-
+26-06-09.23:06:59.268 [main            ] INFO  TaskJobService         - 开始初始化任务调度配置
+26-06-09.23:06:59.453 [main            ] INFO  HikariDataSource       - MainHikariPool - Starting...
+26-06-09.23:07:00.440 [main            ] INFO  HikariPool             - MainHikariPool - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b06ae93
+26-06-09.23:07:00.443 [main            ] INFO  HikariDataSource       - MainHikariPool - Start completed.
+26-06-09.23:07:00.537 [main            ] INFO  TaskJobService         - 开始调度任务，ID: 1, 描述: 自动发帖和通知, Cron表达式: 0/5 0 * * * ?
+26-06-09.23:07:00.550 [main            ] INFO  TaskJobService         - 任务调度成功（函数式），ID: 1
+26-06-09.23:07:00.551 [main            ] INFO  TaskJobService         - 任务调度配置初始化完成，已加载任务数: 1
+26-06-09.23:07:00.553 [main            ] INFO  TaskJobAutoConfig      - xfg-wrench，任务调度作业初始化完成。刷新间隔: 30000ms, 清理cron: 0 0/5 * * * ?
+26-06-09.23:07:00.735 [main            ] INFO  OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+26-06-09.23:07:01.527 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+26-06-09.23:07:01.542 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8091 (http) with context path '/'
+26-06-09.23:07:01.557 [main            ] INFO  Application            - Started Application in 12.78 seconds (process running for 14.476)
+26-06-09.23:07:01.559 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:07:01.563 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:07:31.563 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:07:31.568 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:08:01.560 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:08:01.564 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:08:31.556 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:08:31.560 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:09:01.559 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:09:01.564 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:09:31.560 [test-task-scheduler-1] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:09:31.564 [test-task-scheduler-1] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:10:00.002 [test-task-scheduler-2] INFO  TaskJobService         - 开始清理无效的任务
+26-06-09.23:10:00.061 [test-task-scheduler-2] INFO  TaskJobService         - 没有发现无效的任务需要清理
+26-06-09.23:10:01.565 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:10:01.572 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:10:31.567 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:10:31.570 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:11:01.565 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:11:01.573 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:11:31.567 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:11:31.589 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:12:01.563 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:12:01.584 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:12:31.565 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:12:31.571 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:13:01.557 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:13:01.562 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:13:31.559 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:13:31.564 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:14:01.561 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:14:01.566 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:14:31.565 [test-task-scheduler-5] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:14:31.573 [test-task-scheduler-5] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:15:00.002 [test-task-scheduler-4] INFO  TaskJobService         - 开始清理无效的任务
+26-06-09.23:15:00.005 [test-task-scheduler-4] INFO  TaskJobService         - 没有发现无效的任务需要清理
+26-06-09.23:15:01.558 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:15:01.562 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:15:31.563 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:15:31.567 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:16:01.567 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:16:01.572 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:16:31.569 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:16:31.573 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:17:01.568 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:17:01.574 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:17:31.564 [test-task-scheduler-2] INFO  TaskJobService         - 开始刷新任务调度配置（动态更新）
+26-06-09.23:17:31.567 [test-task-scheduler-2] INFO  TaskJobService         - 任务调度配置刷新完成，当前活跃任务数: 1
+26-06-09.23:17:39.754 [SpringApplicationShutdownHook] INFO  GracefulShutdown       - Commencing graceful shutdown. Waiting for active requests to complete
+26-06-09.23:17:39.775 [tomcat-shutdown ] INFO  GracefulShutdown       - Graceful shutdown complete
+26-06-09.23:17:39.780 [SpringApplicationShutdownHook] INFO  TaskJobService         - 开始停止所有任务
+26-06-09.23:17:39.781 [SpringApplicationShutdownHook] INFO  TaskJobService         - 已取消任务，ID: 1
+26-06-09.23:17:39.781 [SpringApplicationShutdownHook] INFO  TaskJobService         - 所有任务已停止
+26-06-09.23:17:39.784 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown initiated...
+26-06-09.23:17:39.817 [SpringApplicationShutdownHook] INFO  HikariDataSource       - MainHikariPool - Shutdown completed.

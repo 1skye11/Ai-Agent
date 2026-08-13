@@ -1,0 +1,43 @@
+﻿server:
+  port: 8091
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    mysql:
+      username: root
+      password: REPLACE_WITH_MYSQL_PASSWORD
+      url: jdbc:mysql://127.0.0.1:3306/ai-agent-station-study?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        pool-name: Retail_HikariCP
+        minimum-idle: 15
+        idle-timeout: 180000
+        maximum-pool-size: 25
+        auto-commit: true
+        max-lifetime: 1800000
+        connection-timeout: 30000
+        connection-test-query: SELECT 1
+    pgvector:
+      driver-class-name: org.postgresql.Driver
+      username: postgres
+      password: REPLACE_WITH_PG_PASSWORD
+      url: jdbc:postgresql://127.0.0.1:15432/ai-rag-knowledge
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        maximum-pool-size: 5
+        minimum-idle: 2
+        idle-timeout: 30000
+        connection-timeout: 30000
+  ai:
+    openai:
+      base-url: https://api.openai.com
+      api-key: REPLACE_WITH_OPENAI_KEY
+
+logging:
+  level:
+    root: info
+  file:
+    name: /opt/ai-agent/logs/app.log
