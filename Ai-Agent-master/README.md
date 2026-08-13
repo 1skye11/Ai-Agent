@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 ![登录页](docs/screenshots/01-login.png)
-![屏幕截图 2026-08-13 112250.png](docs/screenshots/屏幕截图 2026-08-13 112250.png)
+![屏幕截图 2026-08-13 112250.png](docs/screenshots/06.png)
 
 
 AI Agent Station 是一个面向多场景的 AI Agent 编排与执行平台。它以 Spring Boot 3.4 + Spring AI 1.0 为内核，基于 DDD 多模块架构，把"模型、客户端、顾问、知识库、Agent 流程图、定时任务"全部抽成可配置项，让运营同学在可视化界面拖拽出业务 Agent，并通过调度执行链路把 Agent 真正跑起来。
